@@ -1,4 +1,4 @@
-PORT = process.env.PORT || 80;
+
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
@@ -105,6 +105,8 @@ res.send(body);
         }
     });
 });//end post
+
+PORT = process.env.PORT || 80;
 
 app.listen(PORT, function(){
   console.log('listening...');
