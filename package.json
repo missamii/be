@@ -1,0 +1,22 @@
+{
+  "name": "be",
+  "version": "1.0.0",
+  "description": "search and save books. share books with friends via email",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "project-two"
+  },
+  "author": "tiffanylo",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.73.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}
