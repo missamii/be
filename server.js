@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
 var app = express();
 var request = require('request');
+PORT = process.env.PORT || 80;
 
 app.use(cors());
 
@@ -15,10 +16,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // connect to the database server
 var MongoClient = mongodb.MongoClient;
 
+var GOOGLE_BOOKS_API = '';
+
 var url = 'mongodb://heroku_jp0xr3w7:juearsuhnp8gppac1n7t31s4bq@ds029745.mlab.com:29745/heroku_jp0xr3w7/books_db';
 // var url = 'mongodb://localhost:27017/books_db';
 
-mongodb.MongoClient.connect(process.env.GOOGLE_BOOKS_API || url, function (err, database) {
+mongodb.MongoClient.connect(process.env.MONGODB_URI || url, function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
@@ -106,7 +109,6 @@ res.send(body);
     });
 });//end post
 
-PORT = process.env.PORT || 80;
 
 app.listen(PORT, function(){
   console.log('listening...');
